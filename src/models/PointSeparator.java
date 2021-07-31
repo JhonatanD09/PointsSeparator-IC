@@ -32,25 +32,21 @@ public class PointSeparator {
 				evaluarPesos(dataSetNeurona1, dataSetNeurona2);
 			}
 			System.out.println("Aprendizaje terminado");
-//			imprimirSalida();
+			imprimirSalida();
 		}
 
-//		private void imprimirSalida() {
-//			for (int i = 0; i < dataSetNeurona1.length; i++) {
-//				int hardLimitN1 = hardLimit(dataSetNeurona1[i][0] * pesoN1X1 + dataSetNeurona1[i][1] * pesoN1X2 - baiasN1);
-//				int hardLimitN2 = hardLimit(dataSetNeurona2[i][0] * pesoN2X1 + dataSetNeurona2[i][1] * pesoN2X2 - baiasN2);
-//				
-//				if (i == 1) {
-//					System.out.println(hardLimitN2+" | "+hardLimitN1+" = "+resultado(hardLimitN2, hardLimitN1));
-//				} else {
-//					System.out.println(hardLimitN1+" | "+hardLimitN2+" = "+resultado(hardLimitN1, hardLimitN2));
-//				}
-//			}
-//		}
+		private void imprimirSalida() {
+			for (int i = 0; i < dataSetNeurona1.length; i++) {
+				int hardLimitN1 = hardLimit(dataSetNeurona1[i][0] * pesoN1X1 + dataSetNeurona1[i][1] * pesoN1X2 - baiasN1);
+				int hardLimitN2 = hardLimit(dataSetNeurona2[i][0] * pesoN2X1 + dataSetNeurona2[i][1] * pesoN2X2 - baiasN2);
+				
+				System.out.println("("+dataSetNeurona1[i][0]+" , "+dataSetNeurona1[i][1]+")  pertenece a "+resultado(hardLimitN1, hardLimitN2));
+				}
+		}
 
-//		private int resultado(int x1, int x2) {
-//			return x1==1&&x2==0||x1==0&&x2==1?1:0;
-//		}
+		private String resultado(int x1, int x2) {
+			return x1==1&&x2==0||x1==0&&x2==1?"A":"B";
+		}
 		
 		private void evaluarPesos(int[][] matriz, int[][] matriz2) {
 			
